@@ -12,20 +12,49 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="number">
 	</label>
 	
-	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
+	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName('#number')">
 
 	<div id="wynik"></div>
 	
 	<script>
-	
-		function getDayName()
+		let wynik = document.querySelector("#wynik")
+
+		function getDayName(inputId)
 		{
-					
-			
+			let day;
+			let NumberIn = Number(document.querySelector(inputId).value);
+			let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+			switch (NumberIn){
+				case 1:
+					day = 1;
+					break;
+				case 2:
+					day = 2;
+					break;
+				case 3:
+					day = 3;
+					break;
+				case 4:
+					day = 4;
+					break;
+				case 5:
+					day = 5;
+					break;
+				case 6:
+					day = 6;
+					break;
+				case 7:
+					day = 7;
+					break;
+				default:
+					return alert("to nie jest prawidłowy numer tygodnia");
+			}
+			return wynik.innerHTML = days[day-1];
 		}
+	
 
 	</script>
 

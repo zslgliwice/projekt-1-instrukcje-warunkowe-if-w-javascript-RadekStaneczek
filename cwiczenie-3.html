@@ -18,10 +18,70 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
+		let x = Number(document.querySelector("#x").value);
+		let y = Number(document.querySelector("#y").value);
+		let wynik = document.querySelector("#wynik");
 		function ktora_cwiartka()
 		{
+			let determinant = 0;
+			let cwiartki = ["I","II","III","IV"];
+			console.log(x,y);
 			
+			switch(x,y)
+			{
+				case (0,0):
+					return wynik.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+				case (15,96):
+					return wynik.innerHTML = "René Descartes (Kartezjusz) urodził się 31 marca 1596 roku w La Haye we Francji (obecnie Descartes). Był francuskim filozofem, matematykiem i fizykiem, uważanym za jednego z ojców nowożytnej filozofii.W młodości studiował w kolegium jezuickim, a potem prawo w Poitiers. Służył również w armii holenderskiej i bawarskiej. W 1628 roku przeniósł się do Holandii, gdzie przez ponad 20 lat pracował nad swoimi najważniejszymi dziełami.Najbardziej znany jest z zasady 'Cogito, ergo sum' (Myślę, więc jestem), która stanowi fundament jego filozofii. Dążył do zbudowania pewnej wiedzy opierającej się na rozumie, a nie na zmysłach, które uważał za zwodnicze.W matematyce stworzył geometrię analityczną, co pozwoliło na połączenie geometrii z algebrą. Zmarł w 1650 roku w Sztokholmie, gdzie został zaproszony przez królową Krystynę Szwecji, aby nauczać filozofii.";
+				case (x > 0 && y > 0):
+					determinant = 0
+					break;
+				case (x < 0 && y > 0):
+					determinant = 1;
+					break;
+				case (x < 0 && y > 0):
+					determinant = 2;
+					break;
+				case (x > 0 && y < 0):
+					determinant = 3;
+					break;
+				
+			}/*
+			switch(x)
+			{
+				case x == 0:
+					if(y == 0)
+					{
+						return wynik.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+					}
+					else
+					{
+						return wynik.innerHTML = "Żadna ćwiartka";
+					}
+					break;
+				case x > 0:
+					if(y > 0)
+					{
+						determinant = 0;
+					}
+					else
+					{
+						determinant = 3;
+					}
+					break;
+				case x < 0:
+				if(y > 0)
+					{
+						determinant = 1;
+					}
+					else
+					{
+						determinant = 2;
+					}
+					break;
+			}*/
+			console.log(determinant);
+			return wynik.innerHTML = cwiartki[determinant];
 			
 		}
 

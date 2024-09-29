@@ -18,11 +18,16 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
+		let bramka = document.querySelector("#bramka").value;
+		let wynik = document.querySelector("#wynik");
 		function teleturniej()
 		{
 			var lucky = Math.floor(Math.random() * 3) + 1;
+
+			bramka >= 1 && bramka <= 3 ? (bramka == lucky ? wynik.innerHTML = "wygrana" : wynik.innerHTML = "porażka") : alert("podaj jeszcze raz");
 			
+			
+			return wynik.innerHTML;
 		}
 
 	</script>

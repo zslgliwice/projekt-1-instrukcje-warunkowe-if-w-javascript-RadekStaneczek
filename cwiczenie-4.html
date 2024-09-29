@@ -20,14 +20,30 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
+		let wynik = document.querySelector("#wynik");
 		function matematyka()
 		{
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
 			
-			
+			wynik.innerHTML += "<p>Najmniejsza z wprowadzonych: " + Math.min(a,b,c) + "</p>";
+			wynik.innerHTML += "<p>Największa z wprowadzonych: " + Math.max(a,b,c) + "</p>";
+			wynik.innerHTML += "<p>Wartość bezwzględna a: " + Math.abs(a) + "</p>"  
+				 + "<p>Wartość bezwzględna b: " + Math.abs(b) + "</p>" 
+				 +"<p>Wartość bezwzględna c: " + Math.abs(c) + "</p>";
+			wynik.innerHTML += "Parzysta <p>a: "  + IsEven(a) + "</p>" + "<p>b: "  + IsEven(b) + "</p>" + "<p>c: "  + IsEven(c) + "</p>"
+		}
+		function IsEven(number)
+		{
+			if(number % 2 == 0)
+			{
+				return "tak";
+			}
+			else
+			{
+				return "nie";
+			}
 		}
 
 	</script>
